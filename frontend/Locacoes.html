@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locações - Locadora de Veículos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏎️ Locadora de Veículos Premium</h1>
+    <nav>
+      <a href="index.html"> Início</a>
+      <a href="clientes.html"> Clientes</a>
+      <a href="veiculos.html"> Veículos</a>
+      <a href="locacoes.html"> Locações</a>
+    </nav>
+
+    <h2>Nova Locação</h2>
+    <form id="form-locacao">
+      <select name="cliente_id" id="select-cliente" required>
+        <option value="">Selecione o Cliente</option>
+      </select>
+      <select name="veiculo_id" id="select-veiculo" required>
+        <option value="">Selecione o Veículo</option>
+      </select>
+      <input type="datetime-local" name="data_inicio" placeholder="Data Início" required>
+      <input type="datetime-local" name="data_fim" placeholder="Data Fim" required>
+      <input type="number" step="0.01" name="valor" placeholder="Valor da Locação (R$)" required>
+      <button type="submit">Cadastrar Locação</button>
+    </form>
+
+    <h2>Locações Ativas</h2>
+    <ul id="lista-locacoes"></ul>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    carregarLocacoes();
+    carregarClientesSelect();
+    carregarVeiculosSelect();
+    document.getElementById('form-locacao').addEventListener('submit', cadastrarLocacao);
+  </script>
+</body>
+</html>

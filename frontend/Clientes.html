@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes - Locadora de Veículos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏎️ Locadora de Veículos Premium</h1>
+    <nav>
+      <a href="index.html"> Início</a>
+      <a href="clientes.html"> Clientes</a>
+      <a href="veiculos.html"> Veículos</a>
+      <a href="locacoes.html">Locações</a>
+    </nav>
+
+    <h2>Cadastro de Clientes</h2>
+    <form id="form-cliente">
+      <input type="text" name="nome" placeholder="Nome Completo" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="text" name="telefone" placeholder="Telefone">
+      <input type="date" name="data_nascimento" placeholder="Data de Nascimento">
+      <input type="text" name="endereco" placeholder="Endereço Completo" style="grid-column: 1 / -1;">
+      <button type="submit">Cadastrar Cliente</button>
+    </form>
+
+    <h2>Lista de Clientes</h2>
+    <ul id="lista-clientes"></ul>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    carregarClientes();
+    document.getElementById('form-cliente').addEventListener('submit', cadastrarCliente);
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veículos - Locadora de Veículos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏎️ Locadora de Veículos Premium</h1>
+    <nav>
+      <a href="index.html"> Início</a>
+      <a href="clientes.html"> Clientes</a>
+      <a href="veiculos.html"> Veículos</a>
+      <a href="locacoes.html"> Locações</a>
+    </nav>
+
+    <h2>Cadastro de Veículos</h2>
+    <form id="form-veiculo">
+      <input type="text" name="marca" placeholder="Marca" required>
+      <input type="text" name="modelo" placeholder="Modelo" required>
+      <input type="number" name="ano" placeholder="Ano" required>
+      <input type="text" name="placa" placeholder="Placa" required>
+      <input type="number" step="0.01" name="preco_diario" placeholder="Preço por Dia (R$)" required>
+      <button type="submit">Cadastrar Veículo</button>
+    </form>
+
+    <h2>Lista de Veículos</h2>
+    <ul id="lista-veiculos"></ul>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    carregarVeiculos();
+    document.getElementById('form-veiculo').addEventListener('submit', cadastrarVeiculo);
+  </script>
+</body>
+</html>
